@@ -1,8 +1,7 @@
-
 Gauche-AWS is a library module to use Amazon Web Services in Gauche Scheme interpreter.
 
 Here is a typical usage.
-Refer to the API reference in http://docs.amazonwebservices.com/ for request params.
+Refer to the API reference in http://docs.amazonwebservices.com/ for request parameters.
 
 (use aws.query)
 
