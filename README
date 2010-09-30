@@ -1,0 +1,20 @@
+
+Gauche-AWS is a libraly module to use Amazon Web Services in Gauche Scheme interpleter.
+
+Typical Usage
+
+(use aws.query)
+
+(aws:call-with-params
+   "xxxxXXXXxxxXXxXXxxXxXxxx00xXxxxxxxxxxxXX"                   ; secret key 
+   (lambda (sxml) 
+     ((node-closure (ntype-names?? `(,(aws:node-prefix 'Item)))) 
+      sxml)) 
+   :proxy "proxy.example.org:8080"  
+   :params (list '("AWSAccessKeyId" "XX0XX0XX0XXX0XXXXX0X")      ; access key
+                 '("Operation"      "ItemLookup")
+                 '("ResponseGroup"  "SalesRank,Small,Reviews")
+                 '("ItemId"         "978-000000000-0")))))
+
+
+
