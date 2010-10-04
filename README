@@ -1,7 +1,7 @@
-Gauche-AWS is a library module to use Amazon Web Services in Gauche Scheme interpreter.
+Gauche-AWS is a library module to use Product Advertising API of Amazon Web Services in Gauche Scheme interpreter.
 
 Here is a typical usage.
-Refer to the API reference in http://docs.amazonwebservices.com/ for request parameters.
+Refer to the API reference like http://s3.amazonaws.com/awsdocs/Associates/2010-06-01/prod-adv-api-gsg-2010-06-01.pdf for request parameters.
 
 (use aws.query)
 
@@ -14,7 +14,7 @@ Refer to the API reference in http://docs.amazonwebservices.com/ for request par
    :params (list '("AWSAccessKeyId" "XX0XX0XX0XXX0XXXXX0X")      ; access key
                  '("Operation"      "ItemLookup")
                  '("ResponseGroup"  "SalesRank,Small,Reviews")
-                 '("ItemId"         "978-000000000-0")))))
+                 '("ItemId"         "0000000000")))))            ; asin etc.
 
 
 
