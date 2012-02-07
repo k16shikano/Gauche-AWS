@@ -1,20 +1,20 @@
 Gauche-AWS is a library module to use Product Advertising API of Amazon Web Services in Gauche Scheme interpreter.
 
 Here is a typical usage.
-Refer to the API reference like http://s3.amazonaws.com/awsdocs/Associates/2010-06-01/prod-adv-api-gsg-2010-06-01.pdf for request parameters.
+Refer to the API reference like http://s3.amazonaws.com/awsdocs/Associates/2011-08-01/prod-adv-api-gsg-2011-08-01.pdf for request parameters.
 
 (use aws.query)
 
 (aws:call-with-params
-   "xxxxXXXXxxxXXxXXxxXxXxxx00xXxxxxxxxxxxXX"                    ; secret key 
+   "xxxxXXXXxxxXXxXXxxXxXxxx00xXxxxxxxxxxxXX"                    ; secret key -- MUST 
    (lambda (sxml) 
      ((node-closure (ntype-names?? `(,(aws:node-prefix 'Item)))) 
       sxml)) 
    :proxy "proxy.example.org:8080"  
-   :params (list '("AWSAccessKeyId" "XX0XX0XX0XXX0XXXXX0X")      ; access key
+   :params (list '("AWSAccessKeyId" "XX0XX0XX0XXX0XXXXX0X")      ; access key -- MUST
+                 '("AssociateTag"   "k16shikano-22")             ; associate tag -- MUST
                  '("Operation"      "ItemLookup")
-                 '("ResponseGroup"  "SalesRank,Small,Reviews")
+                 '("ResponseGroup"  "SalesRank,Small")
                  '("ItemId"         "0000000000")))))            ; asin etc.
 
-
-
+Replace AssociateTag value with yours. If you use it without any change, that's fine with me ;)

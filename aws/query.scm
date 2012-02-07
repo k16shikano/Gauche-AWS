@@ -47,7 +47,7 @@
 (define aws-ja        "ecs.amazonaws.jp")
 (define aws-path      "/onca/xml")
 (define service       "AWSECommerceService")
-(define aws-version   "2009-07-01")
+(define aws-version   "2011-08-01")
 (define common-query-params
   `(("Service"        ,service)
     ("Version"        ,aws-version)
@@ -93,7 +93,7 @@
 
 ;;; Get from AWS
 (define (aws:node-prefix node)
-  (define prefix-str "http://webservices.amazon.com/AWSECommerceService/2009-07-01:")
+  (define prefix-str "http://webservices.amazon.com/AWSECommerceService/2011-08-01:")
   (string->symbol (string-append  prefix-str (x->string node))))
 
 (define (aws:http-get seckey . args)
